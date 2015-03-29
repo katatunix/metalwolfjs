@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Metalwolf</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #000000;
+}
+.style1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #00FF00;
+	font-weight: bold;
+	font-size: 24px;
+}
+.style2 {
+	font-size: 10px;
+	color: #FFFF00;
+}
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF0000;
+}
+.style4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 18px;
+}
+.style6 {color: #33CC99}
+.style8 {font-weight: bold; font-size: 24px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style10 {
+	font-family: "Courier New", Courier, monospace;
+	color: #FFFFFF;
+}
+.style11 {
+	color: #990000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+-->
+</style></head>
+
+<body oncontextmenu="return false">
+  <div id="loading" class="style11" align="center">LOADING...</div>
+<table id="maintable" width="956" border="2" align="center" style="visibility:hidden">
+  <tr>
+    <td width="200"><div align="left"><span class="style1"> &nbsp;METALWOLF&nbsp;<span class="style2"><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Language: JavaScript &nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2007  </span></span><span class="style8"><span class="style2">Kata Tunix <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y!M: katatunix</span></span></div>
+      <p class="style3">&nbsp;</p>
+      <p class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style10">Level <span id="level">1</span></span> <br />
+&nbsp;&nbsp;        <br />
+<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Blood:&nbsp;<span id="blood"></span> <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style6">Score:&nbsp;<span id="score"></span> </span></p>
+      <div align="center"><br />
+        <br />
+        <input type="button" name="Button" value="New game" onclick="el.createBigGame()" />
+      </div>
+      <p>&nbsp;</p>
+      <p align="center"><a href="http://katatunix.wordress.com" title="View my blog"><img src="images/avatar.jpg" width="150" height="150" /></a></p></td>
+    <td valign="bottom"><div id="timebar" style="width:20px;background-color:#0066FF"></div></td>
+    <td id="board"></td>
+  </tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="ImagePreloader.js"></script>
+<script language="JavaScript" type="text/javascript" src="Metalwolf.js"></script>
+<script language="JavaScript" type="text/javascript" src="Piece.js"></script>
+<script language="JavaScript" type="text/javascript" src="Board.js"></script>
+<script language="JavaScript" type="text/javascript" src="Algorithms.js"></script>
+<script language="JavaScript" type="text/javascript">
+var el;
+
+function loadedAll() {
+	document.body.removeChild(document.getElementById("loading"));
+	
+	el = newBoard();
+	el.createBigGame();
+	document.getElementById("board").appendChild(el);
+	
+	document.getElementById("maintable").style.visibility = "visible";
+}
+
+function loadImage() {
+	var list = new Array;
+	list.push("images/avatar.jpg");
+	var i;
+	for (i = 0; i < 7; i++) list.push("images/bgr" + i + ".jpg");
+	for (i = 1; i <= 36; i++) list.push("images/pieces" + i + ".png");
+	
+	var t = new ImagePreloader(list, loadedAll);
+}
+
+loadImage();
+</script>
+
+
+
+</body>
+
+</html>
