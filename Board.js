@@ -115,8 +115,7 @@ function newBoard() {
 		}
 	}
 	
-	div.onmousedown = function(evt) {
-		if (window.event) evt = window.event;
+	div.onmouseup = function(evt) {
 		var tmp = getMouseButton(evt);
 		
 		if (tmp == 2 && this.isWaiting) {

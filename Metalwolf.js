@@ -20,14 +20,7 @@ function decTime() {
 }
 
 function getMouseButton(evt) {
-	if (window.event) {
-		var tmp = evt.button;
-		if (tmp == 1) return 0;
-		if (tmp == 4) return 1;
-		if (tmp == 2) return 2;
-	} else {
-		return evt.button;
-	}
+	return evt.button;
 }
 
 function repaint(id, value) {
